@@ -1,0 +1,46 @@
+/* The Classic 90s Starfield Background */
+body {
+    background-color: #000033;
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+}
+
+/* Custom "IE" Style Scrollbar (Only works in some browsers, but very 90s) */
+html {
+    scrollbar-face-color: #C0C0C0;
+    scrollbar-shadow-color: #FFFFFF;
+    scrollbar-highlight-color: #FFFFFF;
+    scrollbar-3dlight-color: #808080;
+    scrollbar-darkshadow-color: #000000;
+    scrollbar-track-color: #808080;
+    scrollbar-arrow-color: #0000FF;
+}
+
+/* The "Web Button" - 88x31 pixels was the legal standard of 1998 */
+.web-button {
+    width: 88px;
+    height: 31px;
+    border: 2px outset #ffffff;
+    background: #000;
+    color: #00FF00;
+    font-size: 9px;
+    font-family: "Courier New", monospace;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px;
+}
+
+/* The Rainbow Text Effect */
+.rainbow {
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}
