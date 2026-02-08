@@ -2,35 +2,105 @@
 <html>
 <head>
     <title>!!! MY TUNES !!!</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body { background: #000000; color: #00FF00; font-family: "Courier New", monospace; }
-        .winamp { border: 3px outset gray; background: #333; width: 250px; padding: 10px; color: #00FF00; margin: 20px auto; }
-        .button { border: 2px outset white; background: #666; padding: 2px 10px; display: inline-block; cursor: pointer; color: white; font-size: 10px; }
+        
+        .winamp { 
+            border: 3px outset #888; 
+            background: #333; 
+            width: 300px; 
+            padding: 10px; 
+            color: #00FF00; 
+            margin: 20px auto;
+            box-shadow: 5px 5px 0px #555;
+        }
+
+        .winamp-title {
+            background: #000080;
+            color: white;
+            padding: 2px;
+            font-size: 10px;
+            margin-bottom: 5px;
+            font-family: Arial;
+        }
+
+        .display {
+            background: #002200;
+            border: 2px inset #555;
+            padding: 5px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        .button { 
+            border: 2px outset #eee; 
+            background: #666; 
+            padding: 2px 8px; 
+            display: inline-block; 
+            cursor: pointer; 
+            color: white; 
+            font-size: 10px;
+            text-decoration: none;
+        }
+
+        .button:active { border: 2px inset #eee; }
     </style>
 </head>
 <body>
     <center>
-        <h1><font face="Impact" color="#FFFF00">MY AWESOME PLAYLIST</font></h1>
+        <h1><font face="Impact" color="#FFFF00" size="6">-= MY RADICAL PLAYLIST =-</font></h1>
         <hr color="#FF00FF" size="5">
 
         <div class="winamp">
-            <b>WINAMP 2.81</b><br>
-            <marquee bgcolor="#003300" scrollamount="3">1. Smells Like Teen Spirit - Nirvana.mp3 --- 2. Semi-Charmed Life - Third Eye Blind.mp3</marquee>
-            <br>
-            <div class="button">PREV</div> <div class="button">PLAY</div> <div class="button">PAUSE</div> <div class="button">STOP</div> <div class="button">NEXT</div>
+            <div class="winamp-title">WINAMP 2.81 - [01. Justin_Buckley_MegaMix.mp3]</div>
+            
+            <div class="display">
+                <font size="1">Kbps: 128 &nbsp; kHz: 44.1</font><br>
+                <marquee scrollamount="3">*** NOW PLAYING: CHIPTUNE MADNESS - 2026 REMIX ***</marquee>
+            </div>
+            
+            <div class="controls">
+                <div class="button" onclick="playMusic()">PLAY</div> 
+                <div class="button" onclick="pauseMusic()">PAUSE</div> 
+                <div class="button" onclick="stopMusic()">STOP</div>
+            </div>
         </div>
 
-        <p>This page features the coolest MIDI files I found on Altavista!</p>
+        <audio id="myPhatBeats" loop>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            Your browser is too old for these beats!
+        </audio>
 
-        <table border="2" bgcolor="#222" width="60%">
-            <tr><td><b>Band</b></td><td><b>Rating</b></td></tr>
-            <tr><td>The Offspring</td><td>10/10 (RAD!)</td></tr>
-            <tr><td>Aqua</td><td>5/10 (Guilty Pleasure)</td></tr>
-            <tr><td>Radiohead</td><td>8/10 (Too Deep)</td></tr>
+        <p>This page features the coolest MIDI-style tracks on the Net!</p>
+
+        <table border="2" bgcolor="#222" width="80%" cellpadding="5">
+            <tr bgcolor="#444"><td><b>TRACK NAME</b></td><td><b>FORMAT</b></td><td><b>STATUS</b></td></tr>
+            <tr><td>Nirvana - Lithium</td><td>.mid</td><td><font color="red">Broken Link</font></td></tr>
+            <tr><td>Space Jam Theme</td><td>.mp3</td><td>RAD!</td></tr>
+            <tr><td>Justin's Mix 2026</td><td>.wav</td><td>Downloading...</td></tr>
         </table>
 
         <br><br>
-        <a href="index.html"><font color="white"><-- GO BACK HOME</font></a>
+        <a href="index.html" style="color:white;"><-- BACK TO THE FORTRESS</a>
     </center>
+
+    <script>
+        var music = document.getElementById("myPhatBeats");
+
+        function playMusic() {
+            music.play();
+            alert("VIBE CHECK INITIATED: Crank those speakers!");
+        }
+
+        function pauseMusic() {
+            music.pause();
+        }
+
+        function stopMusic() {
+            music.pause();
+            music.currentTime = 0;
+        }
+    </script>
 </body>
 </html>
